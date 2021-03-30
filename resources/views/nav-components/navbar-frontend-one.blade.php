@@ -19,8 +19,8 @@
             <a class="nav-link" href="{{ route('page.browse-contracts') }}">Browse Contracts</a>
           </li>
           <li class="nav-item">
-            <!-- ESJF : disabled or hidden if no active contracts ? -->
-            <a class="nav-link disabled" href="#">Project Details</a>
+            <!-- ESJF : disabled or hidden if no active contracts ? disabled -->
+            <a class="nav-link " href="{{ route('job.details',['id' => 1]) }}">Project Details</a>
           </li>
         </ul>
       </div>

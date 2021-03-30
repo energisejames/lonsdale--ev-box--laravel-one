@@ -11,23 +11,40 @@
 |
 */
 
-
 // ESJF : Default Root Landing Page
 Route::get('/', function () {
     return view('page.landing-page');
 })->name('page.landing-page');
 
 // ESJF : Account-details blade file
-Route::get('/account-details', function () {
+Route::get('account-details', function () {
     return view('page.account-details');
 })->name('page.account-details');
 
 // ESJF : My Contracts blade file
-Route::get('/my-contracts', function () {
+Route::get('my-contracts', function () {
     return view('page.my-contracts');
 })->name('page.my-contracts');
 
 // ESJF : Browse Contracts blade file
-Route::get('/browse-contracts', function () {
+Route::get('browse-contracts', function () {
     return view('page.browse-contracts');
 })->name('page.browse-contracts');
+	
+
+Route::group(['prefix' => 'job'], function() {
+	// ESJF : Begin 'job' grouping of Routes
+	// =====================================
+	
+	// ESJF : Browse Contracts blade file
+	Route::get('{id}', function () {
+	    return view('job.details');
+	})->name('job.details');
+	
+	// ESJF : End 'job' grouping of Routes
+	// =====================================
+});
+
+
+
+
