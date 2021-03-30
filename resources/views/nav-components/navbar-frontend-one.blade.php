@@ -10,13 +10,13 @@
         <ul class="navbar-nav mr-auto">
           <!-- ESJF : need to add 'active' class to "current Laravel route" -->
           <li class="nav-item">
-            <a class="nav-link" href="/account-details">My Account </a>
+            <a class="nav-link" href="{{ route('page.account-details') }}">My Account </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/my-contracts">My Contracts</a>
+            <a class="nav-link" href="{{ route('page.my-contracts') }}">My Contracts</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/browse-contracts/">Browse Contracts</a>
+            <a class="nav-link" href="{{ route('page.browse-contracts') }}">Browse Contracts</a>
           </li>
           <li class="nav-item">
             <!-- ESJF : disabled or hidden if no active contracts ? -->
