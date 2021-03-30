@@ -31,19 +31,44 @@ Route::get('browse-contracts', function () {
     return view('page.browse-contracts');
 })->name('page.browse-contracts');
 	
+Route::group(['prefix' => 'engineer'], function() {
+	// ESJF : Begin 'job' grouping of Routes
+	// =====================================
+	
+	// ESJF : Handle an engineer 'sign up' post using dependency injection
+	Route::post('create', function (\Illuminate\Http\Request $request) {
+	    return redirect()
+	      ->route('page.account-details')
+	      ->with('info', 'Engineer Created ' . $request->input('first_name'));
+	})->name('engineer.create');
+	
+	// ESJF : End 'job' grouping of Routes
+	// =====================================
+});
 
 Route::group(['prefix' => 'job'], function() {
 	// ESJF : Begin 'job' grouping of Routes
 	// =====================================
 	
-	// ESJF : Browse Contracts blade file
-	Route::get('{id}', function () {
-	    return view('job.details');
+	// ESJF : Show individual Job based on id
+	Route::get('{id}', function ($id) {
+		  $dummy_job_data = [
+		    'title' => 'BigJobberson',
+		    'content' => 'get jobbing on big jobberson'
+		  ];
+	    return view('job.details', ['job' => $dummy_job_data]);
 	})->name('job.details');
 	
 	// ESJF : End 'job' grouping of Routes
 	// =====================================
 });
+
+// ESJF : n.b. its also possible to return a redirect
+// or JSON from a route request e.g. 
+// return redirect()->route('index');
+// return Response::json(['full_name' => 'James Forbear']);
+
+
 
 
 

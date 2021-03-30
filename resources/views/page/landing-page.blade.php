@@ -64,13 +64,33 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-                <form class="es-form">
+                <form 
+                  class="es-form" 
+                  action="{{ route('engineer.create') }}" 
+                  method="post"
+                >
                     <h2>Register</h2>
                     <p>Etiam vel mauris dictum, fringilla mi ut, auctor libero. Ut orci neque, euismod nec lorem sit amet, consectetur lacinia mi. Donec euismod rutrum mauris, non feugiat justo placerat nec. Etiam vitae mi sit amet augue imperdiet ultrices sodales a diam.</p>
-                    <input />
-                    <input />
-                    <input />
-                    <div class="btn btn-success p-2 w-100">Register</div>
+                    <input 
+                      type="text"
+                      class="form-control"
+                      id="first_name"
+                      name="first_name"
+                      placeholder="enter your first name"
+                    />
+                    <input 
+                      type="email"
+                      class="form-control"
+                      id="email"
+                      name="email"
+                      placeholder="enter your email"
+                    />
+                    <input 
+                    />
+                    <!-- ESJF : we need to include this token in Laravel Forms to prevent Cross Site Request Forgery -->
+                    {{ csrf_field() }}
+                    <!-- ESJF : the above Laravel function will create a hidden _token field for us -->
+                    <button type="submit" class="btn btn-success p-2 w-100">Register</div>
                 </form>
             </div>
         </div>

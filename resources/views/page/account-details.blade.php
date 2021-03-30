@@ -49,6 +49,10 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8">
+                  <!-- flash temporary data to screen to test dependency injection -->
+                  @if(Session::get('info') != null)
+                  <div class="alert alert-info">{{ Session::get('info') }}</div>
+                  @endif
                   <!-- check if uploaded supporting documents before your account verified -->
                   @if("supporting_documents" == "not_set")
                       <!-- you need to upload supporting documents before your account can be verified -->

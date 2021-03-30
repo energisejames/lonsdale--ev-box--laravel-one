@@ -18,8 +18,8 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h3>Job Details for </h3>
-                <p>These are the Job Details for </p>
+                <h3>Job Details for {{ $job['title'] }}</h3>
+                <p>These are the Job Details for {{ $job['content'] }} </p>
             </div>
         </div>
     </div>
