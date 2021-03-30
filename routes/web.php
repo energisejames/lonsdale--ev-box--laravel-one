@@ -36,7 +36,14 @@ Route::group(['prefix' => 'engineer'], function() {
 	// =====================================
 	
 	// ESJF : Handle an engineer 'sign up' post using dependency injection
-	Route::post('create', function (\Illuminate\Http\Request $request) {
+	Route::post('create', function (\Illuminate\Http\Request $request, \Illuminate\Validation\Factory $validator) {
+		  $validation = $validator->make($request->all(), [
+			  'first_name' => 'required|min:2',
+			  'email' =>  'e-mail'
+		  ]);
+		  if ($validation->fails()) {
+			  return redirect()->back()->withErrors($validation);
+		  }
 	    return redirect()
 	      ->route('page.account-details')
 	      ->with('info', 'Engineer Created ' . $request->input('first_name'));
