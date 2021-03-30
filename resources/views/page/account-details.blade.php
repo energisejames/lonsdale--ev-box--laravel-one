@@ -50,7 +50,7 @@
         <div class="row">
             <div class="col-md-8">
                   <!-- flash temporary data to screen to test dependency injection -->
-                  @if(Session::get('info') != null)
+                  @if(Session::has('info'))
                   <div class="alert alert-info">{{ Session::get('info') }}</div>
                   @endif
                   <!-- check if uploaded supporting documents before your account verified -->
