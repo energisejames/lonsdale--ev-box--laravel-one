@@ -22,19 +22,7 @@
 </style>
 <section class="es-landing-one pt-4 pb-4">
     <div class="container">
-        @if(count($errors->all()))
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="alert alert-danger">
-                        <ul>
-                            @foreach($errors->all() as $error)
-                                <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        @endif
+        @include('partials.errors')
         <div class="row">
             <div class="col-md-8">
                   <!-- ESJF : header content -->
