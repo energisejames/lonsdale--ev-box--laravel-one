@@ -1,11 +1,11 @@
-<footer class="es-footer">
+<footer class="es-footer bg-success text-white">
     <div class="container">
         <div class="row">
             <div class="col-md-8">
                 <!-- ESJF : footer content -->
-                <h1>Generic Footer</h1>
-                <p>Generic Footer Content</p>
-                <a href="/es-admin/">Visit Admin Area</a>
+                <h1>Admin Footer</h1>
+                <p>Admin Footer Content</p>
+                <a href="/">Visit Main Site</a>
             </div>
         </div>
     </div>

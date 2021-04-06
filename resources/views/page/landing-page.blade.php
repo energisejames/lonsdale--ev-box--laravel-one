@@ -75,19 +75,33 @@
                     <input 
                       type="text"
                       class="form-control"
-                      id="first_name"
-                      name="first_name"
+                      id="engineerFirstName"
+                      name="engineerFirstName"
                       placeholder="enter your first name"
+                    />
+                    
+                    <input 
+                      type="text"
+                      class="form-control"
+                      id="engineerLastName"
+                      name="engineerLastName"
+                      placeholder="enter your last name"
+                    />
+                    <input 
+                      type="text"
+                      class="form-control"
+                      id="engineerCompanyName"
+                      name="engineerCompanyName"
+                      placeholder="enter your company name"
                     />
                     <input 
                       type="email"
                       class="form-control"
-                      id="email"
-                      name="email"
+                      id="engineerEmail"
+                      name="engineerEmail"
                       placeholder="enter your email"
                     />
-                    <input 
-                    />
+
                     <!-- ESJF : we need to include this token in Laravel Forms to prevent Cross Site Request Forgery -->
                     {{ csrf_field() }}
                     <!-- ESJF : the above Laravel function will create a hidden _token field for us -->

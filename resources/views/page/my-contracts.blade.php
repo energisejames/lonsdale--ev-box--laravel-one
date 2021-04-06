@@ -56,6 +56,30 @@
                         </div>
                     </div>
                 @endfor
+                @foreach($jobs as $job)
+                    @foreach($job->engineers as $engineer)
+                      @if($engineer->id == 1)
+                          <div class="row">
+                              <div class="col-md-3">
+                                  {{ $job->jobAddressLineOne }}
+                              </div>
+                              <div class="col-md-2">
+                                  35
+                              </div>
+                              <div class="col-md-3">
+                                  {{ $job->jobAddressCounty }}
+                              </div>
+                              <div class="col-md-2">
+                                  £1234
+                              </div>
+                              <div class="col-md-2">
+                                  {{(rand(0,3)) == "1" ? "Allocated" : "Awaiting Payment"}}
+                              </div>
+                          </div>
+                          
+                      @endif
+                    @endforeach
+                @endforeach
             </div>
         </div>
     </div>
